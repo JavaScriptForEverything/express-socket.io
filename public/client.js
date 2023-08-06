@@ -8,59 +8,71 @@
 // const productSocket = io('/products')
 // productSocket.send('Hi product')
 
-const userSocket = io('/users')
-userSocket.send('Hi user')
+const socket = io()
+
+socket.on('boiling', (data) => {
+	console.log(data)
+})
+socket.on('cooking', (data) => {
+	console.log(data)
+})
+
+socket.on('sleep', (data) => {
+	console.log(data)
+})
+socket.on('rest', (data) => {
+	console.log(data)
+})
+
+// const root = document.getElementById('root')
+// const ul = document.createElement('ul')
+// const nameInput = document.createElement('input')
+// const submitButton = document.createElement('button')
+// const resetButton = document.createElement('button')
+// const form = document.createElement('form')
+
+// root.appendChild(ul)
+// form.appendChild(nameInput)
+// form.appendChild(submitButton)
+// form.appendChild(resetButton)
+// root.appendChild(form)
 
 
-const root = document.getElementById('root')
-const ul = document.createElement('ul')
-const nameInput = document.createElement('input')
-const submitButton = document.createElement('button')
-const resetButton = document.createElement('button')
-const form = document.createElement('form')
-
-root.appendChild(ul)
-form.appendChild(nameInput)
-form.appendChild(submitButton)
-form.appendChild(resetButton)
-root.appendChild(form)
-
-
-nameInput.type='text'
-nameInput.placeholder = 'list items'
-nameInput.onchange = (evt) => {
-	nameInput.value = evt.target.value 
-}
-
-submitButton.innerText = 'Add'
-submitButton.title = 'submit'
-// button.onclick = () => {
-// 	userSocket.emit('userData', input.value)
+// nameInput.type='text'
+// nameInput.placeholder = 'list items'
+// nameInput.onchange = (evt) => {
+// 	nameInput.value = evt.target.value
 // }
 
-resetButton.innerText = 'Reset'
-resetButton.title = 'Reset'
-resetButton.onclick = () => {
-	const el = document.querySelector('ul')
-	let child = el.lastChild
+// submitButton.innerText = 'Add'
+// submitButton.title = 'submit'
+// // button.onclick = () => {
+// // 	userSocket.emit('userData', input.value)
+// // }
 
-	while(child) {
-		el.removeChild(child)
-		child = el.lastChild
-	}
-}
+// resetButton.innerText = 'Reset'
+// resetButton.title = 'Reset'
+// resetButton.onclick = () => {
+// 	const el = document.querySelector('ul')
+// 	let child = el.lastChild
 
-form.onsubmit = (evt) => {
-	evt.preventDefault()
-	userSocket.emit('userData', nameInput.value)
+// 	while(child) {
+// 		el.removeChild(child)
+// 		child = el.lastChild
+// 	}
+// }
 
-	nameInput.value = ''
-}
+// form.onsubmit = (evt) => {
+// 	evt.preventDefault()
+// 	userSocket.emit('userData', nameInput.value)
 
-userSocket.on('userData-resent', (data) => {
-	const li = document.createElement('li')
-	li.innerText = data
+// 	nameInput.value = ''
+// }
 
-	ul.appendChild(li)
-})
+// userSocket.on('userData-resent', (data) => {
+// 	const li = document.createElement('li')
+// 	li.innerText = data
+
+// 	ul.appendChild(li)
+// })
 

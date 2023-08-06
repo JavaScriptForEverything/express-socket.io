@@ -16,6 +16,18 @@ const io = new Server(httpServer)
 
 
 
+io.on('connection', (socket) => {
+
+	socket.join('kitchen-room')
+	const roomSize = io.sockets.adapter.rooms.get('kitchen-room').size
+	io.sockets.in('kitchen-room').emit('boiling', `${roomSize}: boiling eges`)
+	io.sockets.in('kitchen-room').emit('cooking', `${roomSize}: cooking brief`)
+
+	socket.join('bed-room')
+	io.sockets.in('bed-room').emit('sleep', 'Now I am sleeping')
+	io.sockets.in('bed-room').emit('rest', 'Now I taking rest')
+
+})
 
 
 
@@ -29,15 +41,15 @@ const io = new Server(httpServer)
 
 // })
 
-const users = io.of('/users')
-users.on('connect', (socket) => {
+// const users = io.of('/users')
+// users.on('connect', (socket) => {
 
-	socket.on('userData', (data) => {
-		console.log(data)
-		socket.emit('userData-resent', data)
-	})
+// 	socket.on('userData', (data) => {
+// 		console.log(data)
+// 		socket.emit('userData-resent', data)
+// 	})
 
-})
+// })
 
 
 
