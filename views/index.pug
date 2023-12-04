@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="./css/style.css")
+		title #{title} | socket.io
+	body 
+		h2 Socket.io page
+		
+		button(type='button'
+			class='text-red-500'
+		) Click
+
+
+		script(type="module", src="/socket.io/socket.io.js") 
+		script(type="module", src="./js/utils.js") 
+		script(type="module" src='./js/client.js' )

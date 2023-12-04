@@ -23,7 +23,8 @@ module.exports = {
         }
     ],
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+				"sourceType": "module",
     },
     "rules": {
 			"no-constant-condition" : "warn",
