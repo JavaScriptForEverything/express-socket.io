@@ -15,7 +15,7 @@ if(process.env.NODE_ENV === 'development') {
 	const livereloadServer = livereload.createServer() 				// for reload browser
 	livereloadServer.watch(publicDirectory)
 	livereloadServer.server.once('connection', () => {
-		setTimeout(() => livereloadServer.refresh('/') , 10);
+		setTimeout(() => livereloadServer.refresh('/') , 100);
 	})
 
 	app.use(connectLivereload()) 													// for reload browser

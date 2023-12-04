@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="./css/style.css")
+		title #{title} 
+
+	body 
+		main(class='container mx-auto min-h-screen flex flex-col')
+			block header
+				header 
+					h2 Socket.io page
+			
+			block middle
+				section
+					button(type='button'
+						class='text-red-500'
+					) Click
+
+			block footer
+				footer(class='mt-auto bg-slate-100 py-2')
+					p(class='text-center') footer
+
+
+		//- Comes from backend `socket.io` package
+		script(type="module", src="/socket.io/socket.io.js") 
+
+		//- /public directory
+		script(type="module", src="./js/utils.js") 
+		script(type="module" src='./js/socket.js' )
+		script(type="module" src='./js/ui.js' )
+
