@@ -1,8 +1,6 @@
 # express-socket.io
 
-[banner.png](https://github.com/JavaScriptForEverything/express-socket.io/raw/master/public/banner.png)
-
-
+![banner.png](https://github.com/JavaScriptForEverything/express-socket.io/blob/master/public/banner.png)
 
 
 ### Key Features 
